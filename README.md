@@ -1,97 +1,169 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Student Internship Portal
 
-# Getting Started
+A comprehensive React Native application for managing student internships with multiple user roles and features.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+### 🎓 Student Features
+- **Login System**: Secure authentication with role-based access
+- **Dashboard**: Personal dashboard showing internship status and history
+- **Internship Requests**: Browse and request available internships
+- **Progress Tracking**: View internship progress and certificates
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 👨‍💼 Admin Features
+- **Company Management**: Add and manage companies offering internships
+- **Student Assignment**: Assign students to specific companies
+- **Certificate Management**: Manage student certificates
+- **Hired Interns Tracking**: View all hired interns
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### 🏢 Manager Features
+- **Internship Generation**: Create new internship opportunities
+- **Progress Monitoring**: Track intern progress with visual indicators
+- **Student Details**: Update student status and upload certificates
+- **Team Management**: Manage company internship programs
 
-```sh
-# Using npm
-npm start
+## User Roles & Login Credentials
 
-# OR using Yarn
-yarn start
-```
+### Student
+- **Email**: `qadis@student.com`
+- **Password**: `password`
+- **Features**: Dashboard, internship requests, progress tracking
 
-## Step 2: Build and run your app
+### Admin
+- **Email**: `nauman@admin.com`
+- **Password**: `password`
+- **Features**: Company management, student assignment, certificates
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Manager
+- **Email**: `manager@company.com`
+- **Password**: `password`
+- **Features**: Internship generation, progress monitoring, student management
 
-### Android
+## Screens Overview
 
-```sh
-# Using npm
+### Student Screens
+1. **Login Screen**: Clean login interface with graduation cap icon
+2. **Student Dashboard**: Welcome banner, internship status, and action buttons
+3. **Internship Request**: Searchable list of available internships with request functionality
+
+### Admin Screens
+1. **Admin Dashboard**: Welcome banner with admin action buttons
+2. **Add Company**: Form to enroll new companies
+3. **Assign Student**: List of students with assignment functionality
+4. **Certificates**: Student certificate management
+5. **Hired Interns**: View all hired interns
+
+### Manager Screens
+1. **Manager Dashboard**: Company information and management actions
+2. **Generate Internship**: Create new internship opportunities
+3. **Check Progress**: Monitor intern progress with visual indicators
+4. **Student Details**: Update student status and manage certificates
+
+## Technical Stack
+
+- **React Native**: Cross-platform mobile development
+- **TypeScript**: Type-safe development
+- **React Navigation**: Screen navigation and routing
+- **Context API**: State management for authentication
+- **React Native Vector Icons**: Icon library (deprecated, using emojis)
+
+## Installation & Setup
+
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Install Navigation Dependencies**
+   ```bash
+   npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs react-native-screens react-native-safe-area-context react-native-gesture-handler
+   ```
+
+3. **Run the Application**
+   ```bash
+   # Start Metro bundler
+   npm start
+   
+   # Run on Android
 npm run android
 
-# OR using Yarn
-yarn android
+   # Run on iOS
+   npm run ios
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   └── InternshipPortal.jsx    # Original component (legacy)
+├── context/
+│   └── AuthContext.tsx         # Authentication context
+├── navigation/
+│   └── AppNavigator.tsx        # Main navigation setup
+└── screens/
+    ├── LoginScreen.tsx          # Login interface
+    ├── StudentDashboard.tsx     # Student main screen
+    ├── AdminDashboard.tsx       # Admin main screen
+    ├── ManagerDashboard.tsx     # Manager main screen
+    ├── InternshipRequestScreen.tsx
+    ├── AddCompanyScreen.tsx
+    ├── AssignStudentScreen.tsx
+    ├── GenerateInternshipScreen.tsx
+    ├── CheckProgressScreen.tsx
+    ├── StudentDetailsScreen.tsx
+    ├── CertificatesScreen.tsx
+    └── HiredInternsScreen.tsx
 ```
 
-### iOS
+## Key Features Implemented
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### ✅ Authentication System
+- Role-based login (Student, Admin, Manager)
+- Secure context-based state management
+- Automatic navigation based on user role
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### ✅ Navigation System
+- Stack navigation for screen transitions
+- Role-based screen access
+- Back navigation support
 
-```sh
-bundle install
-```
+### ✅ UI/UX Design
+- Modern, clean interface matching provided designs
+- Consistent color scheme (#667EEA primary blue)
+- Responsive layouts with proper spacing
+- Shadow effects and rounded corners
 
-Then, and every time you update your native dependencies, run:
+### ✅ Data Management
+- Mock data for companies, students, and internships
+- Search functionality across multiple screens
+- Form validation and user feedback
 
-```sh
-bundle exec pod install
-```
+### ✅ Visual Elements
+- Emoji-based icons for better compatibility
+- Progress indicators for internship tracking
+- Status badges and visual feedback
+- Gradient backgrounds and modern styling
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## Future Enhancements
 
-```sh
-# Using npm
-npm run ios
+- [ ] Real backend integration
+- [ ] Push notifications
+- [ ] File upload for certificates
+- [ ] Advanced search and filtering
+- [ ] Analytics dashboard
+- [ ] Email notifications
+- [ ] Calendar integration
+- [ ] Offline support
 
-# OR using Yarn
-yarn ios
-```
+## Contributing
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## License
 
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License.

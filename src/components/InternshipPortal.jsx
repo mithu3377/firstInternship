@@ -5,7 +5,6 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Image,
   Dimensions,
 } from 'react-native';
 
@@ -133,16 +132,16 @@ const InternshipPortal = () => {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>📋 Quick Actions</Text>
         <View style={styles.actionsContainer}>
-          <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#FF6B6B' }]}>
+          <TouchableOpacity style={[styles.actionButton, styles.actionButtonRed]}>
             <Text style={styles.actionButtonText}>📝 Create Profile</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#4ECDC4' }]}>
+          <TouchableOpacity style={[styles.actionButton, styles.actionButtonTeal]}>
             <Text style={styles.actionButtonText}>🔍 Search Jobs</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#45B7D1' }]}>
+          <TouchableOpacity style={[styles.actionButton, styles.actionButtonBlue]}>
             <Text style={styles.actionButtonText}>📊 Track Applications</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.actionButton, { backgroundColor: '#96CEB4' }]}>
+          <TouchableOpacity style={[styles.actionButton, styles.actionButtonGreen]}>
             <Text style={styles.actionButtonText}>💼 My Applications</Text>
           </TouchableOpacity>
         </View>
@@ -286,6 +285,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 10,
     alignItems: 'center',
+  },
+  actionButtonRed: {
+    backgroundColor: '#FF6B6B',
+  },
+  actionButtonTeal: {
+    backgroundColor: '#4ECDC4',
+  },
+  actionButtonBlue: {
+    backgroundColor: '#45B7D1',
+  },
+  actionButtonGreen: {
+    backgroundColor: '#96CEB4',
   },
   actionButtonText: {
     color: '#FFFFFF',
